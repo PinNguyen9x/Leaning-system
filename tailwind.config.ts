@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#0D92F4",
+      },
       fontFamily: {
         primary: ["var(--font-manrope)"],
       },
