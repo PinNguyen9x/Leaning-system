@@ -1,7 +1,7 @@
 import { manrope } from "@/components/fonts";
+import Sidebar from "@/components/layout/Sidebar";
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/components/layout/SideBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
