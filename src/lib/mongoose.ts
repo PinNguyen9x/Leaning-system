@@ -16,7 +16,7 @@ const connectToDatabase = async () => {
 
   try {
     mongooseInstance = await mongoose.connect(MONGODB_URI, {
-      dbName: 'Ucademy',
+      dbName: process.env.DB_NAME,
     })
     console.log('Successfully connected to MongoDB')
   } catch (error) {
