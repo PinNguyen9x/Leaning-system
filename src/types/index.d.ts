@@ -16,4 +16,12 @@ export type TMenuItem = {
   icon?: React.ReactNode
 }
 
-export type MenuItems = TMenuItem[]
+type TCreateUserParams = {
+  clerkId: string
+  username: string
+  email_address: string
+  name?: string
+  avatar?: string
+}
+type MenuItems = TMenuItem[]
+export { ActiveLinkProps, TCreateUserParams, TMenuItem, MenuItems }
