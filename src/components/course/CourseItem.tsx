@@ -17,7 +17,7 @@ const CourseItem = () => {
     },
   ]
   return (
-    <div className="bg-white border border-gray-200 p-4 rounded-2xl">
+    <div className="bg-white dark:bg-grayDarker dark:border-opacity-10 border border-gray-200 p-4 rounded-2xl">
       <Link href="#" className="block h-[180px] relative">
         <Image
           src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWV8ZW58MHx8MHx8fDA%3D"
@@ -36,7 +36,7 @@ const CourseItem = () => {
         <h3 className="font-bold text-lg mb-3">
           Asuka Langley action figure from Evangelion: 3.0 You Can (Not) Redo Japanese Anime
         </h3>
-        <div className="flex items-center gap-3 mb-5 text-xs text-gray-500">
+        <div className="flex items-center gap-3 mb-5 text-xs text-gray-500 dark:text-grayDark">
           {courseInfo.map((item, index) => (
             <div className="flex items-center gap-2" key={index}>
               {item.icon('size-4')}

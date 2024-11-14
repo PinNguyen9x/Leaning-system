@@ -12,7 +12,7 @@ interface ActiveLinkProps {
 const ActiveLink = ({
   children,
   url,
-  className = 'p-3 rounded-md flex items-center gap-3 transition-all',
+  className = 'p-3 rounded-md flex items-center gap-3 dark:text-grayDark  transition-all',
 }: ActiveLinkProps) => {
   const pathname = usePathname()
   const isActive = pathname === url
@@ -23,7 +23,7 @@ const ActiveLink = ({
       className={`${className} ${
         isActive
           ? 'text-primary bg-primary bg-opacity-10 svg-animate'
-          : 'hover:text-primary hover:bg-primary hover:bg-opacity-10'
+          : 'hover:!text-primary hover:!bg-primary hover:!bg-opacity-10'
       }`}
     >
       {children}
