@@ -14,7 +14,10 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { createCourse } from '@/lib/actions/course.action'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import slugify from 'slugify'
 
 const formSchema = z.object({
@@ -23,6 +26,7 @@ const formSchema = z.object({
 })
 
 function CourseAddNew() {
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,7 +36,7 @@ function CourseAddNew() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
     try {
       const data = {
@@ -44,11 +48,18 @@ function CourseAddNew() {
             locale: 'vi',
           }),
       }
-      console.log(data)
-      // await createCourse(values);
+      const res = await createCourse(data)
+      if (res?.success) {
+        toast.success('Add course successfully')
+      }
+      if (res?.data) {
+        router.push(`/manage/course/update?slug=${res.data.slug}`)
+      }
     } catch (error) {
+      toast.error('Fail to add.')
     } finally {
       setIsSubmitting(false)
+      form.reset()
     }
   }
 
@@ -61,9 +72,9 @@ function CourseAddNew() {
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Tên khóa học *</FormLabel>
+                <FormLabel>Course Name *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Tên khóa học" {...field} />
+                  <Input placeholder="couser-name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -74,9 +85,9 @@ function CourseAddNew() {
             name="slug"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Đường dẫn khóa học</FormLabel>
+                <FormLabel>Slug</FormLabel>
                 <FormControl>
-                  <Input placeholder="khoa-hoc-lap-trinh" {...field} />
+                  <Input placeholder="slug-description" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +101,7 @@ function CourseAddNew() {
           className="w-[120px]"
           disabled={isSubmitting}
         >
-          Tạo khóa học
+          Submit
         </Button>
       </form>
     </Form>

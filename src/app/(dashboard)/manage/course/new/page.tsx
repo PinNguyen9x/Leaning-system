@@ -4,7 +4,7 @@ import Heading from '@/components/typeography/Heading'
 const page = () => {
   return (
     <>
-      <Heading>Tạo khóa học mới</Heading>
+      <Heading>Create Course</Heading>
       <CourseAddNew></CourseAddNew>
     </>
   )
