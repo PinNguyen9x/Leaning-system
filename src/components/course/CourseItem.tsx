@@ -21,7 +21,7 @@ const CourseItem = ({ data }: { data: ICourse }) => {
     <div className="bg-white dark:bg-grayDarker dark:border-opacity-10 border border-gray-200 p-4 rounded-2xl">
       <Link href={`/course/${data?.slug}`} className="block h-[180px] relative">
         <Image
-          src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWV8ZW58MHx8MHx8fDA%3D"
+          src="https://images.unsplash.com/photo-1597851065532-055f97d12e47?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8"
           alt=""
           width={300}
           height={200}
