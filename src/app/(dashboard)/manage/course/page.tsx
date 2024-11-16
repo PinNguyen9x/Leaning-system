@@ -1,7 +1,8 @@
+import Heading from '@/components/common/Heading'
 import React from 'react'
 
 const page = () => {
-  return <div>Manage Course</div>
+  return <Heading>Manage Course</Heading>
 }
 
 export default page

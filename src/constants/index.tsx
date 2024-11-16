@@ -16,27 +16,27 @@ export const MENU_ITEMS: TMenuItem[] = [
   },
   {
     url: '/study',
-    title: 'Khu vực học tập',
+    title: 'Study',
     icon: <IconStudy className="size-5" />,
   },
   {
     url: '/manage/course',
-    title: 'Quản lý khóa học',
+    title: 'Manage course',
     icon: <IconCourse className="size-5" />,
   },
   {
     url: '/manage/member',
-    title: 'Quản lý thành viên',
+    title: 'Manage member',
     icon: <IconUsers className="size-5" />,
   },
   {
     url: '/manage/order',
-    title: 'Quản lý đơn hàng',
+    title: 'Manage order',
     icon: <IconOrder className="size-5" />,
   },
   {
     url: '/manage/comment',
-    title: 'Quản lý bình luận',
+    title: 'Manage comment',
     icon: <IconComment className="size-5" />,
   },
 ]
