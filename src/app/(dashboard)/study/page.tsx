@@ -6,11 +6,11 @@ const page = () => {
   return (
     <>
       <Heading>Manage Study</Heading>
-      <CourseGrid>
+      {/* <CourseGrid>
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
         <CourseItem></CourseItem>
-      </CourseGrid>
+      </CourseGrid> */}
     </>
   )
 }
