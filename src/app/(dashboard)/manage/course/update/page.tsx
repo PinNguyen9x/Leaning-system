@@ -9,14 +9,14 @@ const page = async ({
     slug: string
   }
 }) => {
-  const findCourse = await getCourseBySlug({
+  const courses = await getCourseBySlug({
     slug: searchParams.slug,
   })
-  if (!findCourse) return null
+  if (!courses) return null
   return (
     <>
       <Heading className="mb-8">Update Course</Heading>
-      <CourseUpdate />
+      <CourseUpdate data={JSON.parse(JSON.stringify(courses))} />
     </>
   )
 }
